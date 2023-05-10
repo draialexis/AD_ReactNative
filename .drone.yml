@@ -1,0 +1,26 @@
+kind: pipeline
+type: docker
+name: default
+
+trigger:
+  event:
+    - push
+
+steps:
+  - name: sonar-analysis
+    image: hub.codefirst.iut.uca.fr/camille.petitalot/drone-sonarplugin-reactnative:latest
+    commands:
+      - npm install
+      - npm run test:coverage
+      - ls ./coverage
+      - sonar-scanner
+        -Dsonar.projectKey=AD_multiplat
+        -Dsonar.sources=.
+        -Dsonar.host.url=$${PLUGIN_SONAR_HOST}
+        -Dsonar.login=$${PLUGIN_SONAR_TOKEN}
+        -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+        -Dsonar.exclusions=**/lcov-report/**
+    settings:
+      sonar_host: https://codefirst.iut.uca.fr/sonar/
+      sonar_token:
+        from_secret: SONAR_TOKEN
