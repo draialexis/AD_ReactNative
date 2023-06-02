@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AD_multiplat",
-    "slug": "AD_multiplat",
+    "name": "AD_ReactNative",
+    "slug": "AD_ReactNative",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
