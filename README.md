@@ -17,4 +17,26 @@
 
 # AD_ReactNative
 
-A React Native app for education purposes. Refer to [instructions here](https://react-native-courses.clubinfo-clermont.fr/docs/notation).
+A React Native app for education purposes. Refer
+to [instructions here](https://react-native-courses.clubinfo-clermont.fr/docs/notation).
+
+## Sketches
+
+This app will contain several "master/detail" tabs. They are as follows.
+
+### Trainers
+
+<img src="./docs/trainers.jpg" width="540" style="margin:20px">
+
+### Pokemongs
+
+<img src="./docs/pokemongs.jpg" width="540" style="margin:20px">
+
+### Moves
+
+<img src="./docs/moves.jpg" width="540" style="margin:20px">
+
+## Using the app
+
+This app is linked to a backend that is set up to accept CORS from [`http://localhost:19006`](http://localhost:19006), so please make sure you're
+not overriding that default port number when running it.
