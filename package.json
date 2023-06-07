@@ -26,7 +26,13 @@
         "firefox",
         "safari"
       ]
-    }
+    },
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/?(*.)+(spec|test).ts?(x)",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",

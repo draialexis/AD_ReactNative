@@ -20,6 +20,12 @@
 A React Native app for education purposes. Refer
 to [instructions here](https://react-native-courses.clubinfo-clermont.fr/docs/notation).
 
++ [Sketches](#sketches)
+  - [Trainers](#trainers)
+  - [Pokemongs](#pokemongs)
+  - [Moves](#moves)
++ [Using the app](#using-the-app)
+
 ## Sketches
 
 This app will contain several "master/detail" tabs. They are as follows.

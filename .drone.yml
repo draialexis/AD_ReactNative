@@ -19,7 +19,7 @@ steps:
         -Dsonar.host.url=$${PLUGIN_SONAR_HOST}
         -Dsonar.login=$${PLUGIN_SONAR_TOKEN}
         -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
-        -Dsonar.exclusions=**/lcov-report/**
+        -Dsonar.exclusions=**/*.test.tsx,**/*.test.ts,**/*.spec.tsx,**/*.spec.ts,**/lcov-report/**
     settings:
       sonar_host: https://codefirst.iut.uca.fr/sonar/
       sonar_token:
