@@ -1,39 +1,56 @@
-import React from "react";
-import {StyleSheet, View, Text, ScrollView} from "react-native";
+// components/TypeTacticsInfoList.ts
+
+import React                                  from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 type TypeListProps = {
     isWeakness: boolean;
     types: string[];
 };
 
-const TypeTacticsInfoList = ({isWeakness, types}: TypeListProps) => {
+const TypeTacticsInfoList = ({ isWeakness, types }: TypeListProps) => {
     if (!types || types.length === 0) {
-        types = ['Nothing'];
+        types = ['NOTHING'];
     }
 
     return (
-        <ScrollView style={isWeakness ? styles.weakAgainst : styles.effectiveAgainst}>
-            <View style={styles.list}>
-                <Text>{isWeakness ? 'weak against' : 'effective against'}:</Text>
-                {types.map((type, index) => (
-                    <Text key={index}>{type}</Text>
-                ))}
-            </View>
-        </ScrollView>
+        <View style={isWeakness ? styles.weakAgainst : styles.effectiveAgainst}>
+            <Text style={styles.title}>{isWeakness ? 'Weak Against' : 'Effective Against'}:</Text>
+            <ScrollView>
+                <View style={styles.list}>
+                    {types.map((type, index) => (
+                        <Text key={index} style={styles.type}>{type}</Text>
+                    ))}
+                </View>
+            </ScrollView>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
     list: {
-        borderRadius: 5,
         padding: 10,
-        marginBottom: 10,
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+    type: {
+        fontSize: 16,
+        marginBottom: 5,
     },
     weakAgainst: {
         backgroundColor: '#FF6961',
+        borderRadius: 10,
+        marginBottom: 10,
+        padding: 10,
     },
     effectiveAgainst: {
         backgroundColor: '#77DD77',
+        borderRadius: 10,
+        marginBottom: 10,
+        padding: 10,
     },
 });
 
