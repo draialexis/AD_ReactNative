@@ -1,6 +1,6 @@
 // screens/moves/MoveFormScreen.tsx
 
-import React, { useState }                     from 'react';
+import React, { useEffect, useState }          from 'react';
 import { Button, StyleSheet, Text, TextInput } from 'react-native';
 import { StackNavigationProp }                 from '@react-navigation/stack';
 import { RootStackParamList }                  from "../../navigation/navigationTypes";
@@ -43,6 +43,12 @@ const MoveFormScreen = ({ navigation, route }: Props) => {
         },
         schemaVersion: 2
     });
+
+    useEffect(() => {
+        navigation.setOptions({
+            title: route.params?.move ? route.params.move.name : 'New move',
+        });
+    }, [navigation, route.params?.move]);
 
     const [selectedWeakAgainst, setSelectedWeakAgainst] = useState<string[]>(move.type.weakAgainst);
     const [selectedEffectiveAgainst, setSelectedEffectiveAgainst] = useState<string[]>(move.type.effectiveAgainst);
@@ -96,14 +102,22 @@ const MoveFormScreen = ({ navigation, route }: Props) => {
             <Text style={styles.label}>Power: </Text>
             <TextInput
                 value={move.power.toString()}
-                onChangeText={(text) => setMove({ ...move, power: Number(text) })}
+                onChangeText={(text) => {
+                    if (!isNaN(Number(text))) {
+                        setMove({ ...move, power: Number(text) });
+                    }
+                }}
                 style={styles.input}
                 keyboardType="numeric"
             />
             <Text style={styles.label}>Accuracy: </Text>
             <TextInput
                 value={move.accuracy.toString()}
-                onChangeText={(text) => setMove({ ...move, accuracy: Number(text) })}
+                onChangeText={(text) => {
+                    if (!isNaN(Number(text))) {
+                        setMove({ ...move, accuracy: Number(text) });
+                    }
+                }}
                 style={styles.input}
                 keyboardType="numeric"
             />
