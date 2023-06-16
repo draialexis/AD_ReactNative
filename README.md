@@ -11,9 +11,12 @@ to [instructions here](https://react-native-courses.clubinfo-clermont.fr/docs/no
     - [Detail](#detail)
     - [Creating](#creating)
     - [Updating](#updating)
+- [Some business logic](#some-business-logic)
 - [Using the app](#using-the-app)
     - [Running the backend](#running-the-backend)
+    - [Connecting to the backend locally](#connecting-to-the-backend-locally)
     - [Running this app](#running-this-app)
+- [Testing the app](#testing-the-app)
 - [Known limitations](#known-limitations)
     - [Sparse](#sparse)
     - [Hardcoded enums](#hardcoded-enums)
@@ -29,7 +32,7 @@ a [backend API](https://github.com/draialexis/pokemong_api) that provides the da
 * [x] Documentation (6 pts)
     - [x] Application sketches (4 pts)
     - [x] A Readme describing your project/application. (2 pts)
-* [x] Basics (20 pts)
+* [x] Basics (20 pts (- 2))
     - [x] Navigation (3 pts)
         + [x] Tab bottom navigation (2 pts) AND at least one button (1 pts)
     - [x] Redux Store (10 pts)
@@ -42,14 +45,14 @@ a [backend API](https://github.com/draialexis/pokemong_api) that provides the da
     - [x] Binding child component props (1 pts)
     - [x] Handle a TextInput correctly (2 pts)
         + [x] Beware of keyboard management
-* [ ] Application features (14 pts)
+* [x] Application features (14 pts (- 2))
     - [x] Retrieve data using the Web API (6 pts)
         + [x] Handle fetch success callback (3 pts)
         + [x] Handle fetch error callback (3 pts)
-    - [ ] Store favorite data into phone storage (2 pts)
-    - [ ] Write Tests (6 pts)
-        + [ ] all actions payload (1 pts)
-        + [ ] all reducers case (2 pts)
+    - [ ] ~~Store favorite data into phone storage (2 pts)~~
+    - [x] Write Tests (6 pts (- 1))
+        + [ ] ~~all actions payload (1 pts)~~
+        + [x] all reducers case (2 pts)
         + [x] one UI Component (3 pts)
 
 ## Sketches
@@ -132,6 +135,16 @@ yarn start
 ```
 
 The app should launch successfully, and instructions should be provided in terminal to open it on a number of devices.
+
+## Testing the app
+
+You can run some partial automated tests on `moveReducer.ts`, on `TypeTacticsInfoList.tsx`, and
+on `MoveDetailScreen.tsx`
+by running the command
+
+```bash
+yarn run test
+```
 
 ## Known limitations
 

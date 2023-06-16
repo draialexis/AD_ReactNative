@@ -1,9 +1,9 @@
-// components/TypeTacticsInfoList.test.ts
+// components/__tests__/TypeTacticsInfoList.test.ts
 
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import TypeTacticsInfoList from './TypeTacticsInfoList';
-import { TypeName } from "../entities/TypeName";
+import TypeTacticsInfoList from '../TypeTacticsInfoList';
+import { TypeName } from "../../entities/TypeName";
 
 describe('TypeTacticsInfoList component', () => {
     it('renders types correctly', () => {
@@ -17,12 +17,12 @@ describe('TypeTacticsInfoList component', () => {
 
     it('renders "Nothing" when types array is empty', () => {
         const { getByText } = render(<TypeTacticsInfoList isWeakness={false} types={[]}/>);
-        expect(getByText('Nothing')).toBeTruthy();
+        expect(getByText('NOTHING')).toBeTruthy();
     });
 
     it('renders "Nothing" when types is undefined', () => {
         // @ts-ignore
         const { getByText } = render(<TypeTacticsInfoList isWeakness={true} types={undefined}/>);
-        expect(getByText('Nothing')).toBeTruthy();
+        expect(getByText('NOTHING')).toBeTruthy();
     });
 });
