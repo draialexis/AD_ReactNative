@@ -1,9 +1,9 @@
 // components/TypeTacticsInfoList.test.ts
 
-import React               from 'react';
-import { render }          from '@testing-library/react-native';
+import React from 'react';
+import { render } from '@testing-library/react-native';
 import TypeTacticsInfoList from './TypeTacticsInfoList';
-import { TypeName }        from "../entities/TypeName";
+import { TypeName } from "../entities/TypeName";
 
 describe('TypeTacticsInfoList component', () => {
     it('renders types correctly', () => {

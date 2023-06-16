@@ -1,7 +1,7 @@
 // components/MoveListItem.test.ts
 
-import { Move }                                          from "../entities/Move";
-import React                                             from "react";
+import { Move } from "../entities/Move";
+import React from "react";
 import { StyleSheet, Text, TouchableOpacity, ViewStyle } from "react-native";
 
 type MoveListItemProps = {

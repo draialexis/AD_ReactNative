@@ -60,31 +60,47 @@ This app will contain a home page, and a "master/detail" tab for `Moves` with ba
 
 The home screen provides a logo, and tab navigation options to other parts of the application.
 
-<img src="./docs/home.png" width="410" style="margin:20px">
+<img src="./docs/home.png" width="410" style="margin:20px" alt="">
 
 ### Collection
 
 The collection screen displays a list of `Moves` fetched from the API.
 
-<img src="./docs/moves.png" width="410" style="margin:20px">
+<img src="./docs/moves.png" width="410" style="margin:20px" alt="">>
 
 ### Detail
 
 The detail screen displays detailed information about a selected `Move`.
 
-<img src="./docs/move.png" width="410" style="margin:20px">
+<img src="./docs/move.png" width="410" style="margin:20px" alt="">>
 
 ### Creating
 
 The creating screen provides a form for creating a new `Move`.
 
-<img src="./docs/create.png" width="410" style="margin:20px">
+<img src="./docs/create.png" width="410" style="margin:20px" alt="">>
 
 ### Updating
 
 The updating screen provides a form for updating an existing `Move`.
 
-<img src="./docs/update.png" width="410" style="margin:20px">
+<img src="./docs/update.png" width="410" style="margin:20px" alt="">>
+
+## Some business logic
+
+While the back end doesn't forbid a `Move` from being both weak against and effective against the same one type,
+it should. That's one of the flaws of that API.
+
+In this app, we did implement the business logic described above in our callbacks for our `MultiSelect` elements, like
+so:
+
+```typescript
+const handleSelectType = (selectedTypes: string[], setTypes: React.Dispatch<React.SetStateAction<string[]>>, otherSelectedTypes: string[]) => {
+    const uniqueSelectedTypes = Array.from(new Set(selectedTypes));
+    const withoutDuplicatesFromOtherColumn = uniqueSelectedTypes.filter(type => !otherSelectedTypes.includes(type));
+    setTypes(withoutDuplicatesFromOtherColumn);
+};
+```
 
 ## Using the app
 
@@ -94,9 +110,16 @@ In order to use this app, you will need to run the dedicated backend. A `README`
 with [instructions](https://github.com/draialexis/pokemong_api#user-content-prep-steps) is provided
 for that purpose.
 
+### Connecting to the backend locally
+
+First, please find the `config.ts` file at the root of this project, and replace ~~`192.168.0.15`~~
+with the IPv4 address associated with your own Wi-Fi adapter.
+
+To find that address out, you can run `ipconfig` on Windows or `ifconfig` on macOS/Linux in your terminal.
+
 ### Running this app
 
-With the [Expo CLI](https://docs.expo.dev/more/expo-cli/) installed, at the root of the project, simply run
+Then, with the [Expo CLI](https://docs.expo.dev/more/expo-cli/) installed, at the root of the project, simply run
 
 ```bash
 npx expo start

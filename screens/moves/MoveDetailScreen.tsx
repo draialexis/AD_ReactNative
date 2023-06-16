@@ -1,15 +1,15 @@
 // screens/moves/MoveDetailScreen.tsx
 
-import React, { useEffect }                           from 'react';
+import React, { useEffect } from 'react';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { RouteProp }                                  from '@react-navigation/native';
-import { RootStackParamList }                         from "../../navigation/navigationTypes";
-import TypeTacticsInfoList                            from "../../components/TypeTacticsInfoList"
-import { StackNavigationProp }                        from "@react-navigation/stack";
-import { MOVE_DETAIL, MOVE_FORM }                     from '../../navigation/constants';
-import { useSelector }                                from "react-redux";
-import { RootState }                                  from "../../redux/store";
-import { Move }                                       from "../../entities/Move";
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from "../../navigation/navigationTypes";
+import TypeTacticsInfoList from "../../components/TypeTacticsInfoList"
+import { StackNavigationProp } from "@react-navigation/stack";
+import { MOVE_DETAIL, MOVE_FORM } from '../../navigation/constants';
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { Move } from "../../entities/Move";
 
 
 type MoveDetailScreenNavigationProp = StackNavigationProp<RootStackParamList, typeof MOVE_DETAIL>;
@@ -35,7 +35,10 @@ const MoveDetailScreen = ({ navigation, route }: Props) => {
 
     return (
         <ScrollView style={styles.container}>
-            <Button title="Edit Move" onPress={() => navigation.navigate(MOVE_FORM, { move: move })}/>
+            <Button
+                title="Edit Move"
+                color={styles.updateButton.backgroundColor}
+                onPress={() => navigation.navigate(MOVE_FORM, { move: move })}/>
             <Text style={styles.title}>Name: {move?.name}</Text>
             <Text style={styles.detail}>Category: {move?.category}</Text>
             <Text style={styles.detail}>Power: {move?.power}</Text>
@@ -50,6 +53,9 @@ const MoveDetailScreen = ({ navigation, route }: Props) => {
 };
 
 const styles = StyleSheet.create({
+    updateButton: {
+        backgroundColor: '#BA22DA',
+    },
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',

@@ -1,6 +1,6 @@
 // components/AlertModal.tsx
 import { Button, Modal, StyleSheet, Text, View } from 'react-native';
-import React                                     from 'react';
+import React from 'react';
 
 type AlertModalProps = {
     visible: boolean;

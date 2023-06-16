@@ -1,6 +1,6 @@
 // redux/reducers/moveReducer.ts
 import { CREATE_MOVE, DELETE_MOVE, GET_MOVES, MOVE_ERROR, UPDATE_MOVE } from '../constants';
-import { Move }                                                         from "../../entities/Move";
+import { Move } from "../../entities/Move";
 
 export type MoveState = {
     moves: Move[];

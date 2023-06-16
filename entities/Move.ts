@@ -1,6 +1,6 @@
 // entities/Move.ts
 
-import { Type }             from "./Type";
+import { Type } from "./Type";
 import { MoveCategoryName } from "./MoveCategoryName";
 
 export interface Move {

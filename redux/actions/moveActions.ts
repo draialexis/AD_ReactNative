@@ -1,10 +1,8 @@
 // redux/actions/moveAction.ts
 import { CREATE_MOVE, DELETE, DELETE_MOVE, GET, GET_MOVES, MOVE_ERROR, POST, PUT, UPDATE_MOVE } from '../constants';
-import {
-    Move
-}                                                                                               from "../../entities/Move";
-import { Dispatch }                                                                             from "redux";
-import { API_BASE_URL }                                                                         from "../../config";
+import { Move } from "../../entities/Move";
+import { Dispatch } from "redux";
+import { API_BASE_URL } from "../../config";
 
 
 export const createMove = (move: Move) => {

@@ -1,6 +1,6 @@
 // components/TypeTacticsInfoList.ts
 
-import React                                  from "react";
+import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 type TypeListProps = {

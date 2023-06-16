@@ -1,6 +1,6 @@
 // screens/HomeScreen.tsx
 
-import React           from 'react';
+import React from 'react';
 import { Image, View } from 'react-native';
 
 const HomeScreen = () => {

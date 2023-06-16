@@ -1,15 +1,15 @@
 // navigation/Navigation.tsx
 
-import React                                    from 'react';
-import { createBottomTabNavigator }             from '@react-navigation/bottom-tabs';
-import { NavigationContainer }                  from '@react-navigation/native';
-import MoveListScreen                           from '../screens/moves/MoveListScreen';
-import MoveDetailScreen                         from '../screens/moves/MoveDetailScreen';
-import HomeScreen                               from '../screens/HomeScreen';
-import { createStackNavigator }                 from '@react-navigation/stack';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import MoveListScreen from '../screens/moves/MoveListScreen';
+import MoveDetailScreen from '../screens/moves/MoveDetailScreen';
+import HomeScreen from '../screens/HomeScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList, RootTabParamList } from "./navigationTypes";
-import { Image, StyleSheet }                    from 'react-native';
-import MoveFormScreen                           from "../screens/moves/MoveFormScreen";
+import { Image, StyleSheet } from 'react-native';
+import MoveFormScreen from "../screens/moves/MoveFormScreen";
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<RootTabParamList>();

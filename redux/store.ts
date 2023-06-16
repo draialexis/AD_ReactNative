@@ -1,6 +1,6 @@
 // redux/store.ts
 
-import { configureStore }         from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import moveReducer, { MoveState } from './reducers/moveReducer';
 
 export type AppDispatch = typeof store.dispatch;
